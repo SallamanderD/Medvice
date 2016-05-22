@@ -20,7 +20,6 @@ namespace Medvice.Models
 
         [Column, Required]
         [DataType(DataType.Text)]
-        [StringLength(200, MinimumLength = 20, ErrorMessage = "Длина заголовка должна быть от 10 до 100 символов.")]
         public string Name { get; set; }
 
         [Column, Required]
