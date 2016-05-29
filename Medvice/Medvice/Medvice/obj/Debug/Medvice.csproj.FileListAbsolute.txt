@@ -179,3 +179,7 @@ C:\Users\Usagi\Desktop\Medvice\Medvice\bin\ru\System.Web.WebPages.Razor.resource
 C:\Users\Usagi\Desktop\Medvice\Medvice\obj\Debug\Medvice.csprojResolveAssemblyReference.cache
 C:\Users\Usagi\Desktop\Medvice\Medvice\obj\Debug\Medvice.dll
 C:\Users\Usagi\Desktop\Medvice\Medvice\obj\Debug\Medvice.pdb
+C:\Users\Александр Доротенко\Desktop\MedivceRepo\Medvice\Medvice\Medvice\bin\PagedList.dll
+C:\Users\Александр Доротенко\Desktop\MedivceRepo\Medvice\Medvice\Medvice\bin\PagedList.Mvc.dll
+C:\Users\Александр Доротенко\Desktop\MedivceRepo\Medvice\Medvice\Medvice\bin\PagedList.xml
+C:\Users\Александр Доротенко\Desktop\MedivceRepo\Medvice\Medvice\Medvice\bin\PagedList.Mvc.xml

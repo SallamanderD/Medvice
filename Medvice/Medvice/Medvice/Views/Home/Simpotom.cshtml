@@ -1,0 +1,53 @@
+﻿@model PagedList.IPagedList<Medvice.Models.Simpotom>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Симптомы";
+}
+<!-- content -->
+<div class="wrapper row2">
+    <div id="container" class="clear">
+        <!-- Slider -->
+        <section id="slider" class="clear">
+            <figure>
+                <img src="/images/630x300.png" alt="">
+                <figcaption>
+                    <h2>Шопэнгауэр Артур</h2>
+                    <p>Здоровье до того перевешивает все остальные блага жизни, что поистине здоровый нищий счастливее больного короля.</p>
+
+                </figcaption>
+            </figure>
+        </section>
+        <!-- main content -->
+        <div id="intro">
+            <section class="clear">
+
+                @foreach (var x in Model)
+                {
+                    <div>
+                        <article style="margin-top: 10%" class="two_quarter">
+                            <h2>@x.Name</h2>
+                            <p>@x.Content</p>
+                        </article>
+                        <!-- article 2 -->
+                        <article class="two_quarter lastbox">
+                            <figure>
+                                <ul class="clear">
+                                    
+                                </ul>
+                            </figure>
+                        </article>
+                    </div>
+                }
+
+
+            </section>
+        </div>
+        <!-- ########################################################################################## -->
+        <!-- ########################################################################################## -->
+        <!-- ########################################################################################## -->
+        <!-- ########################################################################################## -->
+        <!-- / content body -->
+        Страница @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) из @Model.PageCount
+        @Html.PagedListPager(Model, page => Url.Action("Simpotom", new { page }))
+    </div>
+</div>
