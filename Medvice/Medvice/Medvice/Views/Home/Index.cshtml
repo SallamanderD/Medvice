@@ -17,30 +17,55 @@
         </section>
         <!-- main content -->
         <div id="intro">
-            <section class="clear">
-
-                @foreach (var x in ViewBag.Diseases)
-                {
-                    <div>
-                        <article class="two_quarter">
-                            <h2>@x.Name</h2>
-                            <p>@x.Description</p>
-                        </article>
-                        <!-- article 2 -->
-                        <article class="two_quarter lastbox">
-                            <figure>
-                                <ul class="clear">
-                                    <li><a href="#"><img src="images/demo/130x130.gif" width="130" height="130" alt=""></a></li>
-                                    <li><a href="#"><img src="images/demo/130x130.gif" width="130" height="130" alt=""></a></li>
-                                    <li class="last"><a href="#"><img src="images/demo/130x130.gif" width="130" height="130" alt=""></a></li>
-                                </ul>
-                                <figcaption><a href="#">View Our Image Gallery Here &raquo;</a></figcaption>
-                            </figure>
-                        </article>
-                    </div>
+            <section class="clear">                
+                @{
+                    <h1 style="margin-left: -5%"><b>@Html.ActionLink("Болезни", "Diseases", "Home"):</b></h1>
+                    <br />
+                    <br />
+                    <br />
+                    int k = 0;
+                    foreach (var x in ViewBag.Diseases)
+                    {
+                        if (k == 3)
+                        {
+                            break;
+                        }
+                        <div>
+                            
+                            <article>
+                                <a href="@Url.Action("DiseaseView", "Home", new { Id = x.DiseaseId})"><h1>@x.Name</h1></a>                                
+                                <p>@x.ShortDescription</p>
+                            </article>
+                            <hr />
+                        </div>
+                        k++;
+                    }
+                    <h1 style="margin-left: -5%"><b>@Html.ActionLink("Симптомы", "Simpotom", "Home"):</b></h1>
+                    <br />
+                    <br />
+                    <br />
+                    k = 0;
+                    foreach (var z in ViewBag.Simpotoms)
+                    {
+                        if (k == 3)
+                        {
+                            break;
+                        }
+                        <div>
+                            <article>
+                                <a href="@Url.Action("SimpotomView", "Home", new { Id = z.SimpotomId})"><h1>@z.Name</h1></a>    
+                                <p>@z.ShortDescription</p>
+                            </article>
+                            <hr />
+                        </div>
+                        k++;
+                    }
+                    <h1 style="margin-left: -5%"><b>@Html.ActionLink("Медикаменты", "Medicine", "Home"):</b></h1>
+                    <br />
+                    <br />
+                    <br />
+                    <h1>Пока ничего :3</h1>
                 }
-
-
             </section>
         </div>
         <!-- ########################################################################################## -->

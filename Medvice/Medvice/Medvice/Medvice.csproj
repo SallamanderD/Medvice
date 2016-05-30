@@ -229,6 +229,9 @@
     <Content Include="Views\Home\Diseases.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_NewLayout.cshtml" />
+    <Content Include="Views\Home\DiseaseView.cshtml" />
+    <Content Include="Views\Home\SimpotomView.cshtml" />
+    <Content Include="Views\Home\Medicine.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -23,12 +23,22 @@ namespace Medvice.Controllers
             else
             {
                 ViewBag.Diseases = db.Diseases.ToList().Where(x => x.Name.ToLower().Contains(searchWord) || x.Description.ToLower().Contains(searchWord));
-                ViewBag.Simpotoms = db.Simpotoms.ToList().Where(x => x.Name.ToLower().Contains(searchWord) || x.Content.ToLower().Contains(searchWord));
+                ViewBag.Simpotoms = db.Simpotoms.ToList().Where(x => x.Name.ToLower().Contains(searchWord) || x.ShortDescription.ToLower().Contains(searchWord));
                 ViewBag.Medicine = db.Medicines.ToList();
             }
             return View();
         }
 
+        public ActionResult DiseaseView(string Id)
+        {
+            ViewBag.Disease = db.Diseases.Where(x => x.DiseaseId == Id).First();
+            return View();
+        }
+        public ActionResult SimpotomView(string Id)
+        {
+            ViewBag.Simpotom = db.Simpotoms.Where(x => x.SimpotomId == Id).First();
+            return View();
+        }
 
 
         public ActionResult Simpotom(int? page)
@@ -40,11 +50,20 @@ namespace Medvice.Controllers
             return View(db.Simpotoms.ToList().ToPagedList(pageNumber, pageSize));
         }
 
-        public ActionResult Diseases()
+        public ActionResult Diseases(int? page)
         {
-            ViewBag.Message = "Your contact page.";
+            int pageSize = 7;
+            int pageNumber = (page ?? 1);
+            
+            ViewBag.Diseases = db.Simpotoms.ToList();
+            return View(db.Diseases.ToList().ToPagedList(pageNumber, pageSize));
+        }
 
+        public ActionResult Medicine()
+        {
             return View();
         }
+
+
     }
 }

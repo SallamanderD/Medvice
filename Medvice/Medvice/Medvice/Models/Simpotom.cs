@@ -22,7 +22,11 @@ namespace Medvice.Models
 
         [Column, Required]
         [DataType(DataType.MultilineText)]
-        public string Content { get; set; }
+        public string ShortDescription { get; set; }
+
+        public string Description { get; set; }
+
+        public string Other { get; set; }
         public virtual List<Disease> Diseases { get; set; }
     }
 }

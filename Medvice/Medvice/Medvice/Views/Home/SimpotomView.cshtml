@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "SimpotomView";
+}
+
+
+<div class="wrapper row2">
+    <div id="container" class="clear">
+        <!-- Slider -->
+        <section id="slider" class="clear">
+            <figure>
+                <img src="/images/630x300.png" alt="">
+                <figcaption>
+                    <h2>Шопэнгауэр Артур</h2>
+                    <p>Здоровье до того перевешивает все остальные блага жизни, что поистине здоровый нищий счастливее больного короля.</p>
+
+                </figcaption>
+            </figure>
+        </section>
+        <!-- main content -->
+        <div id="intro">
+            <section class="clear">
+                <h1><u>@ViewBag.Simpotom.Name</u></h1>
+                <br />
+                <p><b>Общая информация</b></p>
+                <br />
+                <p>@ViewBag.Simpotom.Description</p>
+                <br />
+                <p><b>Болезни:</b> </p>
+                @{
+                    int x = 1;
+                    foreach (var z in ViewBag.Simpotom.Diseases)
+                    {
+                        <p>     @x) @z.Name</p>
+                        x++;
+                    }
+                }
+                <br />
+                <br />
+                <p>@ViewBag.Simpotom.Other</p>
+                <br />
+                </section>
+        </div>
+    </div>
+</div>

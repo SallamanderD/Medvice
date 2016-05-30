@@ -18,29 +18,29 @@
             </figure>
         </section>
         <!-- main content -->
-        <div id="intro">
-            <section class="clear">
+        <div id="intro" class="row">
+            <div class="col-md-12">
+                <section class="clear">
+                    <div class="col-md-12">
+                        @foreach (var x in Model)
+                        {
+                            <div class="col col-md-12">
+                                <article style="margin-bottom: 5%">
+                                    <h2>@x.Name</h2>
+                                    <p>@x.ShortDescription</p>
+                                </article>
+                                <div class="col-md-12">
+                                    <div class="col-md-offset-8">
+                                        <p>Причины:</p>
+                                    </div>
+                                </div>
+                                <hr />
+                            </div>
+                        }
 
-                @foreach (var x in Model)
-                {
-                    <div>
-                        <article style="margin-top: 10%" class="two_quarter">
-                            <h2>@x.Name</h2>
-                            <p>@x.Content</p>
-                        </article>
-                        <!-- article 2 -->
-                        <article class="two_quarter lastbox">
-                            <figure>
-                                <ul class="clear">
-                                    
-                                </ul>
-                            </figure>
-                        </article>
                     </div>
-                }
-
-
-            </section>
+                </section>
+            </div>
         </div>
         <!-- ########################################################################################## -->
         <!-- ########################################################################################## -->

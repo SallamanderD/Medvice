@@ -1,17 +1,54 @@
-﻿@{
-    ViewBag.Title = "Contact";
+﻿@model PagedList.IPagedList<Medvice.Models.Disease>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Болезни";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<!-- content -->
+<div class="wrapper row2">
+    <div id="container" class="clear">
+        <!-- Slider -->
+        <section id="slider" class="clear">
+            <figure>
+                <img src="/images/630x300.png" alt="">
+                <figcaption>
+                    <h2>Шопэнгауэр Артур</h2>
+                    <p>Здоровье до того перевешивает все остальные блага жизни, что поистине здоровый нищий счастливее больного короля.</p>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+                </figcaption>
+            </figure>
+        </section>
+        <!-- main content -->
+        <div id="intro" class="row">
+            <section class="clear">
+                <div class="col-md-12">
+                    @foreach (var x in Model)
+                    {
+                        <div class="col col-md-12">
+                            <article style="margin-bottom: 5%">
+                                <h2>@Html.ActionLink(x.Name, "DiseaseView", new { Id = x.DiseaseId })</h2>
+                                <p>@x.Description</p>
+                            </article>
+                            <div class="col-md-12">
+                                <div class="col-md-offset-8">
+                                    <p>Симптомы: </p>
+                                </div>
+                            </div>
+                            <hr />
+                        </div>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+                    }
+                </div>
+
+            </section>
+        </div>
+        Страница @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) из @Model.PageCount
+        @Html.PagedListPager(Model, page => Url.Action("Diseases", new { page }))
+    </div>
+    <!-- ########################################################################################## -->
+    <!-- ########################################################################################## -->
+    <!-- ########################################################################################## -->
+    <!-- ########################################################################################## -->
+    <!-- / content body -->
+    
+</div>
+</div>

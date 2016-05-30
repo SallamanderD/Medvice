@@ -17,6 +17,8 @@ namespace Medvice.Models
 
         [Key]
         public string DiseaseId { get; set; }
+        [Column]
+        public string ShortDescription { get; set; }
 
         [Column, Required]
         [DataType(DataType.Text)]
@@ -25,6 +27,10 @@ namespace Medvice.Models
         [Column, Required]
         [DataType(DataType.MultilineText)]
         public string Description { get; set; }
+
+        public string SpreadWay { get; set; }
+
+        public string Recommendation { get; set; }
         public virtual List<Simpotom> Simpotoms { get; set; }
         public virtual List<Medicine> Medicines { get; set; }
     }
